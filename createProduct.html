@@ -1,0 +1,79 @@
+<html>
+    <head>
+     <meta charset="utf-8">
+        <meta name="Keywords" content=" "/>
+        <meta name="description" content=" "/>
+        <title> Shopping Cart | Home Page </title>
+        <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+        <link href="css/all.min.css" rel="stylesheet">
+        <link rel = "stylesheet"  href="css/font-awesome.min.css">
+        <link rel = "stylesheet"  href="css/style.css">
+        <link rel = "stylesheet"  href="css/create-product.css">
+
+        <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+
+    </head>
+
+    <body>
+        <!--Header-->
+        <!--<i class="fas fa-shopping-cart"></i>-->
+                <!--<i class="far fa-heart"></i>-->
+
+        <header>   
+            <div class="container">
+                <div class="header-content">
+                    <a href ="index.html"class = "brand"> Shopping Cart</a>
+
+                    <nav class="navbar" >                    
+                                   <ul id="links" class="list-unstyled">
+                                    <li><a href ="login.html" >Sign In </a></li>
+                                    <li><a href ="register.html" >Sign Up </a></li>
+                                      </ul>
+                                      <ul id= "user-info" class="list-unstyled"> 
+                                        <li><a href="#" id= "user"></a> </li>
+                                        <li><a href="favorites.html" >Favorites</a> </li>
+
+                                        <li class="shopping-cart">
+                                          <i class="fas fa-shopping-cart"></i>
+                                       <span class= "badge">  </span>  
+                                       <div class= "cart-products">
+                                         <div></div>
+                                       
+                                         <a href ="cartproducts.html" >View all products </a>
+                                       </div>
+                                      </li>
+                                        <li><a href="#" id= "logout"> Logout</a> </li>
+                                      </ul>
+                                    </nav>  
+                                  </div>  <!--header content-->
+                                    </div>     <!--container-->
+                                      </header> 
+
+                                      <section class= "create-product-page">
+                                      <div class="container">
+
+                                        <form id="create-form">
+                                          <input type="file"  id="upload-image-file" />
+                                          <input type="text" placeholder="Name ..." id="product-name" />
+                                            <input type="text" placeholder="Description ..." id="product-desc" />
+ 
+                                            <select name="" id="product-size">
+                                                <option value=""hidden> select size</option>
+
+                                             <option value="small"> Small</option>
+                                             <option value="medium"> Medium</option>
+                                             <option value="large"> Large</option>
+                                            </select>
+                                        </form>
+                                        <input type="submit" value="Create" id="product-create-btn"/>
+                                      </div>
+                                        </section>
+                     
+                                      
+                                        <script src= "js/user.js"></script>  
+                                        <script src= "js/data.js"> </script>  
+                                        <script src= "js/createProduct.js"> </script>
+                                      
+              
+                                      </body> 
+        </html>

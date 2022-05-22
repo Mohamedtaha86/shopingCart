@@ -1,0 +1,105 @@
+<html>
+    <head>
+     <meta charset="utf-8">
+        <meta name="Keywords" content=" "/>
+        <meta name="description" content=" "/>
+        <title> Shopping Cart | Home Page </title>
+        <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+        <link href="css/all.min.css" rel="stylesheet">
+        <link rel = "stylesheet"  href="css/font-awesome.min.css">
+        <link rel = "stylesheet"  href="css/style.css">
+        <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+
+    </head>
+
+    <body>
+        <!--Header-->
+        <!--<i class="fas fa-shopping-cart"></i>-->
+                <!--<i class="far fa-heart"></i>-->
+
+        <header>   
+            <div class="container">
+                <div class="header-content">
+                    <a href ="index.html"class = "brand"> Shopping Cart</a>
+
+                    <nav class="navbar" >                    
+                                   <ul id="links" class="list-unstyled">
+                                    <li><a href ="login.html" >Sign In </a></li>
+                                    <li><a href ="register.html" >Sign Up </a></li>
+                                      </ul>
+                                      <ul id= "user-info" class="list-unstyled"> 
+                                        <li><a href="#" id= "user"></a> </li>
+                                        <li><a href="favorites.html" >Favorites</a> </li>
+
+                                        <li class="shopping-cart">
+                                          <i class="fas fa-shopping-cart"></i>
+                                       <span class= "badge">  </span>  
+                                       <div class= "cart-products">
+                                         <div></div>
+                                       
+                                         <a href ="cartproducts.html" >View all products </a>
+                                       </div>
+                                      </li>
+                                        <li><a href="#" id= "logout"> Logout</a> </li>
+                                      </ul>
+                                    </nav>  
+                                  </div>  <!--header content-->
+                                    </div>     <!--container-->
+                                      </header> 
+
+                                      <section class= "home">
+                                        <div class="container">
+                                          <input id= "search" type="text" placeholder= "Search by name" />
+                                          <div class= "products"></div><!--products-->
+                                          <div class= "products-filter">
+                                              <select id="size-filter">
+                                                <option value="" hidden>Filter By Size</option>
+                                                <option value="all" >All</option>
+                                                <option value="small" >small</option>
+                                                <option value="medium" >Medium</option>
+                                                <option value="large" >Large</option>
+                                                </select>
+
+
+                                          </div><!--filter-->
+                                                                                                                          
+                                        
+                                        </div> <!--container-->
+                                        <a href="createProduct.html" class= "create-product-icon"> 
+                                          <i class="fa fa-plus"></i></a>
+                                        
+                                        </section>
+
+                                        <script> function saveItemData(id){
+                                          localStorage.setItem("productId", id) ;
+                                          window.location= "cartDetails.html"
+                                       }</script>                                      
+                                        <script>
+                                             function addToFavorite(id){
+                                              let favoritesItems= localStorage.getItem("productsFavorite") 
+    ? JSON.parse(localStorage.getItem("productsFavorite")) : [];
+        if(localStorage.getItem("username")){
+            let choosenItem= products.find((item) => item.id === id);
+            choosenItem.liked = true;
+            favoritesItems =[...favoritesItems, choosenItem];
+            localStorage.setItem("productsFavorite", JSON.stringify(favoritesItems));
+
+            products.map((item) => {
+                if(item.id === choosenItem.id){
+                    item.like = true
+                }
+            })
+            localStorage.setItem('products', JSON.stringify(products))
+            
+            drawProductsUI(products)
+        } else {
+            window.location = "login.html";
+           }
+        }
+                                        </script>
+                                        <script src= "js/user.js"></script>  
+                                        <script src= "js/data.js"></script>  
+                                        <script src= "js/script.js"></script>  
+              
+                                      </body> 
+        </html>
